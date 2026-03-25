@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f2f5;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            width: 150px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #555;
+        }
+
+        .value {
+            font-size: 30px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📊 Real-Time Dashboard</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Users</h2>
+        <p id="data1" class="value">Loading...</p>
+    </div>
+
+    <div class="card">
+        <h2>Sales</h2>
+        <p id="data2" class="value">Loading...</p>
+    </div>
+
+    <div class="card">
+        <h2>Revenue</h2>
+        <p id="data3" class="value">Loading...</p>
+    </div>
+
+</div>
+
+<script>
+function getData() {
+    let value1 = Math.floor(Math.random() * 100);
+    let value2 = Math.floor(Math.random() * 500);
+    let value3 = Math.floor(Math.random() * 1000);
+
+    document.getElementById("data1").innerText = value1;
+    document.getElementById("data2").innerText = value2;
+    document.getElementById("data3").innerText = value3;
+}
+
+getData();
+setInterval(getData, 3000);
+</script>
+
+</body>
+</html>
